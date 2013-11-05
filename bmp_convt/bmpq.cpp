@@ -9,7 +9,7 @@ void LSPDebug(const TCHAR * fmt, ...)
 	va_list args;
 	TCHAR * buffer = new TCHAR[max];
 
-	static const TCHAR * suffix = _T(":[LSP]: ");
+	static const TCHAR * suffix = _T(":[DBG]: ");
 	static const size_t len = _tcslen(suffix);
 	_tcscpy_s(buffer, max, suffix);
 
@@ -81,8 +81,8 @@ BYTE* ConvertRGBToBMPBuffer ( BYTE* Buffer, int width, int height,
 	{
 		for ( int x = 0; x < 3 * width; x+=3 )
 		{
-			bufpos = y * 3 * width + x;     // position in original buffer
-			newpos = ( height - y - 1 ) * psw + x; // position in padded buffer
+			bufpos = y * 3 * width + x;              // position in original buffer
+			newpos = ( height - y - 1 ) * psw + x;   // position in padded buffer
 			newbuf[newpos] = Buffer[bufpos+2];       // swap r and b
 			newbuf[newpos + 1] = Buffer[bufpos + 1]; // g stays
 			newbuf[newpos + 2] = Buffer[bufpos];     // swap b and r

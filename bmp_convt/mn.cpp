@@ -12,6 +12,6 @@ void main(int argc, char** argv)
 		mbstowcs_s(&ch_con, fname, MAX_PATH, argv[1], _TRUNCATE);
 
 		_tcprintf_s(_T("Open file %s...\r\n"), fname);
-		bs.convertBMP(fname);
+		bs.convertBMP(fname); 
 	}
 }
